@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="row sticky-top">
+      <div class="d-none d-md-block col-md-3">
+      </div>
+      <div class="d-block col-md-6 col-sm-12 col-sm-12">
+          <nav class="nav nav-pills flex-column flex-sm-row shadow-sm">
+              <a class="flex-sm-fill text-sm-center nav-link active" routerLink="/overview" [ngClass]="{active: active === 'overview' || !active}" (click)="active = 'overview'">
+                  <span class="menu-text">
+                      <i class="fa fas fa-table"></i>&nbsp;
+                      Overview
+                  </span>
+              </a>
+              <a class="flex-sm-fill text-sm-center nav-link" routerLink="/live-board" [ngClass]="{active: active === 'live-board'}" (click)="active = 'live-board'">
+                  <span class="menu-text">
+                      <i class="fa fas fa-wifi"></i>&nbsp;
+                      Live board
+                  </span>
+              </a>
+          </nav>
+      </div>
+      <div class="d-none d-md-block col-md-3">
+      </div>
+  </div>
+ <router-outlet></router-outlet>
+ 
+</div>
+

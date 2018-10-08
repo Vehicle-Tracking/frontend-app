@@ -1,0 +1,29 @@
+<div class="filter-action-section">
+  <div class="row">
+      <div class="col2 col-md-6">
+          <div class="form-group">
+              <label for="customer-dropdown">Owner</label>
+              <!-- <custom-select [settings]="{ maximumSelectionLength: 3, placeholder: 'Filter by Customer', allowClear: true }"  [options]="[]" [(ngModel)]="SelectedCustomer" (OnSelect)="OnCustomerSelect($event)">
+              </custom-select> -->
+              <select id="owner-dropdown" class="js-states form-control" placeholder="filter by vehicle owner" #owner (change)="SelectedOwnerChanged($event, owner.value)" [(ngModel)]="SelectedOwner">
+                  <option value="">All Owners</option>
+                  <option *ngFor="let o of filterItems.owners; let i = index" [value]="o.key">{{o.value}}</option>
+              </select>
+              <small class="form-text text-muted">you can filter the result with specific owner.</small>
+          </div>
+          
+      </div>
+      <div class="col2 col-md-6">
+          <div class="form-group">
+              <label for="status-dropdown">Vehicle Status</label>
+              <select id="status-dropdown" class="js-states form-control" #status (change)="SelectedStatusChanged($event, status.value)" [(ngModel)]="SelectedStatus">
+                    <option value="" selected="selected">All</option>
+                    <option *ngFor="let s of filterItems.allStatus; let i = index" [value]="s.key">{{s.value}}</option>
+              </select>
+              <small class="form-text text-muted">you can filter the result for specific vehicle's last status.</small>
+              <!-- <select2 [settings]="{ maximumSelectionLength: 1, placeholder: 'Filter by Vehicle Status', allowClear: true }" [options]="[]" [(ngModel)]="SelectedStatus" (onSelect)="OnStatusSelect($event)">
+              </select2> -->
+          </div>
+      </div>
+  </div>
+</div>

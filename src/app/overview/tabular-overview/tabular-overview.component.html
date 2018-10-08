@@ -1,0 +1,35 @@
+<div class="content">
+  <table class="table table-bordered table-hover table-striped table-responsive-xl table-responsive-lg table-responsive-md">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">VIN</th>
+        <th scope="col">Reg NO.</th>
+        <th scope="col">Owner</th>
+        <th scope="col">Availablity</th>
+        <th scope="col">Last Status</th>
+        <th scope="col">Last Sync</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="vehicles && vehicles.length > 0; else noTableInfo">
+        <tr *ngFor="let v of vehicles; let i = index">
+          <th scope="row">{{ i+1 }}</th>
+          <td>{{ v.vehicle.vin }}</td>
+          <td>{{ v.vehicle.regNumber }}</td>
+          <td>{{ v.vehicle.owner.name }}</td>
+          <td>{{ v.availiblity }}</td>
+          <td [ngClass]="{'text-danger': !v.lastStatus}">{{ v.lastStatus ? "Connected" : "Disconnected" }}</td>
+          <td>{{ v.lastSyncFormetted }}</td>
+        </tr>
+        </ng-container>
+        <ng-template #noTableInfo>
+           <tr>
+             <td class="text-center" colspan="7">
+                <span class="p2 font-weight-bold text-danger">no vehicle found</span>
+             </td>
+           </tr>
+        </ng-template>
+    </tbody>
+  </table>
+</div>

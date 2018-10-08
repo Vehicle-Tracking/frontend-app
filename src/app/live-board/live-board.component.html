@@ -1,0 +1,70 @@
+<div class="content">
+  <br />
+  <table class="table table-bordered table-hover table-striped table-responsive-xl table-responsive-lg table-responsive-md">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">VIN</th>
+        <th scope="col">Reg NO.</th>
+        <th scope="col">Status</th>
+        <th scope="col">Date</th>
+        <th scope="col">Owner</th>
+        <th scope="col">OwnerAddress</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="pageModel && pageModel.pageItems && pageModel.pageItems.length > 0; else noTableInfo">
+        <tr *ngFor="let v of pageModel.pageItems; let i = index" [ngClass]="{'text-danger': v.status === 0}">
+          <th scope="row">{{ i+1 }}</th>
+          <td>{{ v.vin }}</td>
+          <td>{{ v.regNumber }}</td>
+          <td [ngClass]="{'font-weight-bold': v.status === 0}">{{ v.status === 1 ? "Connected" : "Disconnected" }}</td>
+          <td>{{ v.statusDateFormetted }}</td>
+          <td>{{ v.ownerName }}</td>
+          <td class="font-weight-light"><small>{{ v.ownerAddress }}</small></td>
+        </tr>
+      </ng-container>
+      <ng-template #noTableInfo>
+        <tr>
+          <td class="text-center" colspan="7">
+            <span class="p2 font-weight-bold text-danger">no vehicle found</span>
+          </td>
+        </tr>
+      </ng-template>
+
+
+    </tbody>
+  </table>
+  <div *ngIf="pageModel && pageModel.pagerItem && pageModel.pagerItem.totalPages > 1" style="padding: 10px;border: 1px solid lightgray">
+    <nav aria-label="Page navigation">
+      <ul *ngIf="pageModel.pagerItem && pageModel.pagerItem.pages && pageModel.pagerItem.pages.length" class="pagination justify-content-center">
+        <li class="page-item" [ngClass]="{disabled: pageModel.pagerItem.currentPage === 1}">
+          <a class="page-link" (click)="setPage(1)"><i class="fa fa-angle-double-left"></i></a>
+        </li>
+        <li class="page-item" [ngClass]="{disabled:pageModel.pagerItem.currentPage === 1}">
+          <a class="page-link" (click)="setPage(pageModel.pagerItem.currentPage - 1)"><i class="fa fa-angle-left"></i></a>
+        </li>
+        <li class="page-item" *ngFor="let page of pageModel.pagerItem.pages" [ngClass]="{active:pageModel.pagerItem.currentPage === page}">
+          <ng-container *ngIf="page !== pageModel.pagerItem.currentPage; else currentPage">
+            <a (click)="setPage(page)" class="page-link">
+              {{page}}
+            </a>
+          </ng-container>
+          <ng-template #currentPage>
+            <span class="page-link">
+              {{page}}
+              <span class="sr-only">(current)</span>
+            </span>
+          </ng-template>
+        </li>
+        <li class="page-item" [ngClass]="{disabled:pageModel.pagerItem.currentPage === pageModel.pagerItem.totalPages}">
+          <a class="page-link" (click)="setPage(pageModel.pagerItem.currentPage + 1)"><i class="fa fa-angle-right"></i></a>
+        </li>
+        <li class="page-item" [ngClass]="{disabled:pageModel.pagerItem.currentPage === pageModel.pagerItem.totalPages}">
+          <a class="page-link" (click)="setPage(pageModel.pagerItem.totalPages)"><i class="fa fa-angle-double-right"></i></a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+</div>

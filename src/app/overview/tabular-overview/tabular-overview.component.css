@@ -1,0 +1,11 @@
+.table-striped tbody tr:nth-of-type(odd){
+    background-color: rgb(236,236,236, .3);
+}
+
+.table-striped tbody tr:nth-of-type(even){
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* .table-striped tbody tr:nth-of-type(even) td{
+    background-color: red !important; /*rgb(236,236,236, .3);
+} */
