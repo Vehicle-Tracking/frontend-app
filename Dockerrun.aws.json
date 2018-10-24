@@ -38,10 +38,6 @@
           "sourceVolume": "nginx-conf",
           "containerPath": "/etc/nginx",
           "readOnly": true
-        },
-        {
-          "sourceVolume": "awseb-logs-vehicle-tracking",
-          "containerPath": "/var/log/vehicle-tracking"
         }
       ]
     }
