@@ -2,7 +2,7 @@ version: '2.1'
 
 services:
   vehicle-tracking:
-   #image: mohammadkh/frontend:latest
+    #image: mohammadkh/frontend:latest
     build:
       context:  .
       dockerfile: Dockerfile
@@ -12,3 +12,4 @@ services:
     ports:
       - 80:80
       - 443:443
+      - 9229:9229

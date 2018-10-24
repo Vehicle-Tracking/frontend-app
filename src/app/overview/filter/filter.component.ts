@@ -10,7 +10,7 @@ import { Filters } from 'src/app/model/filters.model';
 export class FilterComponent implements OnInit {
   SelectedOwner = '';
   SelectedStatus = '';
-  private filterItems = new Filters([] , []);
+  filterItems = new Filters([] , []);
   // @Output() OnFilterChanged = new EventEmitter<{SelectedOwner: string, SelectedStatus: number}>();
 
   constructor(private dataService: DataService) { }

@@ -1,0 +1,30 @@
+{
+  "name": "frontend-app",
+  "scripts": {
+    "postdeploy": "npm run start"
+  },
+  "env": {
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "environments": {
+    "test": {
+      "formation": {
+        "test": {
+          "quantity": 4
+        }
+      }
+    }
+  }
+}

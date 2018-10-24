@@ -24,13 +24,22 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Avt.Web.Frontend", ".", "{0
 		SlnRelativePath = "..\Avt.Web.Frontend\"
 	EndProjectSection
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{06135205-E493-4142-BEAD-6FA3B8546574}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{04A77785-AA4F-4D4C-BCB4-BB6006B51E57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{04A77785-AA4F-4D4C-BCB4-BB6006B51E57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04A77785-AA4F-4D4C-BCB4-BB6006B51E57}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{04A77785-AA4F-4D4C-BCB4-BB6006B51E57}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{06135205-E493-4142-BEAD-6FA3B8546574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06135205-E493-4142-BEAD-6FA3B8546574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06135205-E493-4142-BEAD-6FA3B8546574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06135205-E493-4142-BEAD-6FA3B8546574}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

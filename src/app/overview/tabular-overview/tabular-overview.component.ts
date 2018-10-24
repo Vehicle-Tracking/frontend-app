@@ -11,7 +11,7 @@ import { DataService } from '../../core/service/data.service';
 export class TabularOverviewComponent implements OnInit {
 
   // @Input() vehicles: VehicleOverView[] = [];
-  private vehicles: VehicleOverView[] = [];
+  vehicles: VehicleOverView[] = [];
 
   constructor(private dataService: DataService) { }
 

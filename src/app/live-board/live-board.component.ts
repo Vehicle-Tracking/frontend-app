@@ -11,7 +11,7 @@ import { PagerService } from '../core/service/pager.service';
   providers: []
 })
 export class LiveBoardComponent implements OnInit {
-  private pageModel: LiveBoardModel;
+  pageModel: LiveBoardModel;
 
   constructor(private pingHub: PingHubService, private pagerService: PagerService) { }
 
