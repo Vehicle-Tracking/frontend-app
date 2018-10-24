@@ -4,7 +4,7 @@
     {
       "name": "vehicle-tracking",
       "host": {
-        "sourcePath": "/app/src"
+        "sourcePath": "/usr/src/app"
       }
     },
     {
@@ -14,22 +14,24 @@
       }
     }
   ],
+  "workingDirectory": "/usr/src/app",
   "containerDefinitions": [
     {
-      "name": "vehicle-tracking",
+      "name": "frontend",
       "image": "altenchallenge/frontend:latest",
       "essential": true,
-      "memory": 256,
-	   "portMappings": [
+      "memory": 512,
+      "portMappings": [
         {
           "hostPort": 80,
-          "containerPort": 80
+          "containerPort": 80,
+          "protocol": "tcp"
         }
       ],
       "mountPoints": [
         {
           "sourceVolume": "vehicle-tracking",
-          "containerPath": "/var/www/html",
+          "containerPath": "/usr/src/app",
           "readOnly": true
         },
         {
