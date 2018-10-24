@@ -1,0 +1,47 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "volumes": [
+    {
+      "name": "vehicle-tracking",
+      "host": {
+        "sourcePath": "/app/src"
+      }
+    },
+    {
+      "name": "nginx-conf",
+      "host": {
+        "sourcePath": "/etc/nginx"
+      }
+    }
+  ],
+  "containerDefinitions": [
+    {
+      "name": "vehicle-tracking",
+      "image": "altenchallenge/frontend:latest",
+      "essential": true,
+      "memory": 256,
+	   "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ]
+      "mountPoints": [
+        {
+          "sourceVolume": "vehicle-tracking",
+          "containerPath": "/var/www/html",
+          "readOnly": true
+        },
+        {
+          "sourceVolume": "nginx-conf",
+          "containerPath": "/etc/nginx",
+          "readOnly": true
+        },
+        {
+          "sourceVolume": "awseb-logs-vehicle-tracking",
+          "containerPath": "/var/log/vehicle-tracking"
+        }
+      ]
+    }
+  ]
+}

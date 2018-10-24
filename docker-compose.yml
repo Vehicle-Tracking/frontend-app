@@ -2,10 +2,7 @@ version: '2.1'
 
 services:
   vehicle-tracking:
-   #image: mohammadkh/frontend:latest
-    build:
-      context:  .
-      dockerfile: Dockerfile
+    image: mohammadkh/frontend:latest
     environment:
       NODE_ENV: production
     build: .
