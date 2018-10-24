@@ -1,0 +1,12 @@
+services:
+  vehicle-tracking:
+    build:
+      context: G:\MyProjects\Alten\Source\Microservice\Avt.Web\Frontend\Avt.Web.Frontend
+    environment:
+      NODE_ENV: production
+    image: mohammadkh/frontend:latest
+    ports:
+    - 80:80/tcp
+    - 443:443/tcp
+    - 9229:9229/tcp
+version: '2.1'

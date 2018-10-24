@@ -4,7 +4,7 @@
     {
       "name": "vehicle-tracking",
       "host": {
-        "sourcePath": "/usr/src/app"
+        "sourcePath": "/var/app/current"
       }
     },
     {
@@ -23,7 +23,6 @@
       "memory": 512,
       "portMappings": [
         {
-          "hostPort": 80,
           "containerPort": 80,
           "protocol": "tcp"
         }
